@@ -4,11 +4,12 @@
     html5up.net | @ajlkn
     Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
-<html>
+<html lang="ja">
 
 <head>
     <title>ix</title>
     <meta charset="utf-8">
+    <meta http-equiv="content-language" content="ja">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/vscode-monaco.css">
@@ -51,8 +52,11 @@ int main(void) {
         <footer id="footer">
             <ul class="copyright">
                 <li>Copyright &copy; 2019 ix.</li>
-                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li><hr class="nor">
-                The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0">Creative Commons 3.0 Attribution License</a>.
+                <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                <div class="if-none-bg">
+                    <hr class="nor">
+                    The Android robot is reproduced or modified from work created and shared by Google and used according to terms described in the <a href="https://creativecommons.org/licenses/by/3.0">Creative Commons 3.0 Attribution License</a>.
+                </div>
             </ul>
         </footer>
 
@@ -66,6 +70,7 @@ int main(void) {
             });
             document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
         }
+
     </script>
 
 </body>
