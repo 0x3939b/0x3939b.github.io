@@ -7,15 +7,39 @@
 <html lang="ja">
 
 <head>
-    <title>ix</title>
+    <title id="title"></title>
     <meta charset="utf-8">
     <meta http-equiv="content-language" content="ja">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/vscode-monaco.css">
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+    <script src="https://unpkg.com/ityped"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css"></noscript>
+    <script type="text/javascript">
+        //iTyped
+        ityped.init('#title', {
+            // 表示させる文字
+            strings: ['Hello, World!!', 'I am ...', 'ix'],
+            // 表示する時のスピード
+            typeSpeed: 55,
+            // 戻る時のスピード
+            backSpeed: 20,
+            // スタート時の遅延時間
+            startDelay: 500,
+            // 戻る時の遅延時間
+            backDelay: 500,
+            // ループの有無
+            loop: false,
+            // カーソル表示の有無
+            showCursor: false,
+            // アニメーション終了時
+            onFinished: function() {}
+        });
+
+    </script>
 </head>
 
 <body class="is-preload">
@@ -27,7 +51,7 @@
         <section id="main">
             <header>
                 <span class="avatar"><img src="images/avatar.jpg" alt=""></span>
-                <h1>ix</h1>
+                <h1><span id="hello"></span></h1>
                 <p class="leftcenter">趣味でプログラミングを勉強しています<br>コンピュータやガジェット、機械に関わるものが好きです</p>
             </header>
             <footer>
@@ -64,12 +88,69 @@ int main(void) {
 
     <!-- Scripts -->
     <script type="text/javascript">
+        //Load完了アニメーション
         if ('addEventListener' in window) {
             window.addEventListener('load', function() {
                 document.body.className = document.body.className.replace(/\bis-preload\b/, '');
             });
             document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
         }
+
+    </script>
+    <script type="text/javascript">
+        var blink;
+
+        function startblink() {
+            blink = setInterval(function() {
+                $('.ityped-cursor').fadeOut(250, function() {
+                    $(this).fadeIn(55)
+                });
+            }, 1000);
+        }
+
+        function stopblink() {
+            clearInterval(blink);
+        }
+
+        function sleep(msec) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve()
+                }, msec);
+            })
+        }
+        async function finished() {
+            await sleep(2250);
+            stopblink();
+            $('.ityped-cursor').css({
+                'display': 'none',
+            });
+        }
+
+        //iTyped
+        ityped.init('#hello', {
+            // 表示させる文字
+            strings: ['Hello, World!!', 'I am ...', 'ix'],
+            // 表示する時のスピード
+            typeSpeed: 55,
+            // 戻る時のスピード
+            backSpeed: 20,
+            // スタート時の遅延時間
+            startDelay: 500,
+            // 戻る時の遅延時間
+            backDelay: 500,
+            // ループの有無
+            loop: false,
+            // カーソル表示の有無
+            showCursor: true,
+            // カーソルの形状
+            cursorChar: "|",
+            // アニメーション終了時
+            onFinished: function() {
+                finished();
+            }
+        });
+        startblink();
 
     </script>
 
