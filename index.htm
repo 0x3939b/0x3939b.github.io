@@ -44,17 +44,15 @@
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/ityped"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-    <script type="text/javascript">
-        $("#title").empty();
-
-    </script>
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css"></noscript>
 </head>
 
 <body class="is-preload">
+    <script type="text/javascript">
+        $("#title").empty();
 
+    </script>
     <!-- Wrapper -->
     <div id="wrapper">
 
@@ -131,57 +129,59 @@ int main(void) {
             })
         }
         async function finished() {
-            await sleep(2250);
+            await sleep(3000);
             stopblink();
             $('.ityped-cursor').css({
                 'display': 'none',
             });
         }
 
-        //iTyped
-        ityped.init('#title', {
-            // 表示させる文字
-            strings: ['Hello, World!!', 'I am ...', 'ix'],
-            // 表示する時のスピード
-            typeSpeed: 55,
-            // 戻る時のスピード
-            backSpeed: 20,
-            // スタート時の遅延時間
-            startDelay: 500,
-            // 戻る時の遅延時間
-            backDelay: 500,
-            // ループの有無
-            loop: false,
-            // カーソル表示の有無
-            showCursor: false,
-            // アニメーション終了時
-            onFinished: function() {}
-        });
+        window.onload = function() {
+            //iTyped
+            ityped.init('#title', {
+                // 表示させる文字
+                strings: ['Hello, World!!', 'I am ...', 'ix'],
+                // 表示する時のスピード
+                typeSpeed: 55,
+                // 戻る時のスピード
+                backSpeed: 20,
+                // スタート時の遅延時間
+                startDelay: 500,
+                // 戻る時の遅延時間
+                backDelay: 500,
+                // ループの有無
+                loop: false,
+                // カーソル表示の有無
+                showCursor: false,
+                // アニメーション終了時
+                onFinished: function() {}
+            });
 
-        //iTyped
-        ityped.init('#hello', {
-            // 表示させる文字
-            strings: ['Hello, World!!', 'I am ...', 'ix'],
-            // 表示する時のスピード
-            typeSpeed: 55,
-            // 戻る時のスピード
-            backSpeed: 20,
-            // スタート時の遅延時間
-            startDelay: 500,
-            // 戻る時の遅延時間
-            backDelay: 500,
-            // ループの有無
-            loop: false,
-            // カーソル表示の有無
-            showCursor: true,
-            // カーソルの形状
-            cursorChar: "|",
-            // アニメーション終了時
-            onFinished: function() {
-                finished();
-            }
-        });
-        startblink();
+            //iTyped
+            ityped.init('#hello', {
+                // 表示させる文字
+                strings: ['Hello, World!!', 'I am ...', 'ix'],
+                // 表示する時のスピード
+                typeSpeed: 55,
+                // 戻る時のスピード
+                backSpeed: 20,
+                // スタート時の遅延時間
+                startDelay: 500,
+                // 戻る時の遅延時間
+                backDelay: 500,
+                // ループの有無
+                loop: false,
+                // カーソル表示の有無
+                showCursor: true,
+                // カーソルの形状
+                cursorChar: "|",
+                // アニメーション終了時
+                onFinished: function() {
+                    finished();
+                }
+            });
+            startblink();
+        }
 
     </script>
 </body>
