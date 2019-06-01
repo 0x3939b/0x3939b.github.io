@@ -7,7 +7,7 @@
 <html lang="ja">
 
 <head>
-    <title id="title"></title>
+    <title id="title">ix</title>
     <meta charset="utf-8">
     <meta http-equiv="content-language" content="ja">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -44,29 +44,13 @@
     <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
     <script src="https://unpkg.com/ityped"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        $("#title").empty();
+
+    </script>
     <noscript>
         <link rel="stylesheet" href="assets/css/noscript.css"></noscript>
-    <script type="text/javascript">
-        //iTyped
-        ityped.init('#title', {
-            // 表示させる文字
-            strings: ['Hello, World!!', 'I am ...', 'ix'],
-            // 表示する時のスピード
-            typeSpeed: 55,
-            // 戻る時のスピード
-            backSpeed: 20,
-            // スタート時の遅延時間
-            startDelay: 500,
-            // 戻る時の遅延時間
-            backDelay: 500,
-            // ループの有無
-            loop: false,
-            // カーソル表示の有無
-            showCursor: false,
-            // アニメーション終了時
-            onFinished: function() {}
-        });
-    </script>
 </head>
 
 <body class="is-preload">
@@ -122,6 +106,7 @@ int main(void) {
             });
             document.body.className += (navigator.userAgent.match(/(MSIE|rv:11\.0)/) ? ' is-ie' : '');
         }
+
     </script>
     <script type="text/javascript">
         var blink;
@@ -154,6 +139,26 @@ int main(void) {
         }
 
         //iTyped
+        ityped.init('#title', {
+            // 表示させる文字
+            strings: ['Hello, World!!', 'I am ...', 'ix'],
+            // 表示する時のスピード
+            typeSpeed: 55,
+            // 戻る時のスピード
+            backSpeed: 20,
+            // スタート時の遅延時間
+            startDelay: 500,
+            // 戻る時の遅延時間
+            backDelay: 500,
+            // ループの有無
+            loop: false,
+            // カーソル表示の有無
+            showCursor: false,
+            // アニメーション終了時
+            onFinished: function() {}
+        });
+
+        //iTyped
         ityped.init('#hello', {
             // 表示させる文字
             strings: ['Hello, World!!', 'I am ...', 'ix'],
@@ -177,8 +182,8 @@ int main(void) {
             }
         });
         startblink();
-    </script>
 
+    </script>
 </body>
 
 </html>
