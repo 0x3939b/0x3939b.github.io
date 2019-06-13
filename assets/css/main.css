@@ -3285,7 +3285,7 @@ button:disabled,
 }
 
 #header nav a[href="#menu"]:before {
-    content: '\f0c9';
+    content: '\f11b';
     line-height: inherit;
 }
 
