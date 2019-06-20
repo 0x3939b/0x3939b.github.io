@@ -193,6 +193,7 @@
 
     <script type="text/javascript">
         var blink;
+        var unview = true;
 
         function startblink() {
             blink = setInterval(function() {
@@ -222,7 +223,7 @@
         }
 
         window.onload = function() {
-            //iTyped
+            // iTyped
             ityped.init('#title', {
                 // 表示させる文字
                 strings: ['Hello, World!!', 'I am ...', 'ix'],
@@ -242,7 +243,7 @@
                 onFinished: function() {}
             });
 
-            //iTyped
+            // iTyped
             ityped.init('#hello_title', {
                 // 表示させる文字
                 strings: ['Hello, World!!', 'I am ...', 'ix'],
@@ -266,7 +267,7 @@
                 }
             });
 
-            //iTyped
+            // iTyped
             ityped.init('#hello_header', {
                 // 表示させる文字
                 strings: ['Hello, World!!', 'I am ...', 'ix'],
@@ -309,8 +310,9 @@
         // inview
         $('#motto').on('inview', function(event, isInView) {
             // ブラウザの表示域に表示されたときに実行
-            if (isInView) {
-                //iTyped
+            if (isInView && unview) {
+                unview = false;
+                // iTyped
                 ityped.init('#motto', {
                     // 表示させる文字
                     strings: ['面白そう', '今までにない', '新しい', '探求心'],
@@ -331,9 +333,10 @@
                         $('#motto').off('inview');
                     }
                 });
+
             }
         });
-        //ページ内リンクスムーズアニメーション
+        // ページ内リンクスムーズアニメーション
         $(function() {
             $('a[href^="#s_"]').click(function() {
                 var speed = 1000;
