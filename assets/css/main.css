@@ -171,6 +171,39 @@ textarea {
     appearance: none;
 }
 
+.kagibox {
+    position: relative;
+    padding: 0.25em 1em;
+}
+
+.kagibox:before,
+.kagibox:after {
+    content: '';
+    width: 20px;
+    height: 24px;
+    position: absolute;
+    display: inline-block;
+}
+
+.kagibox:before {
+    border-left: solid 2px #00ebaa;
+    border-top: solid 2px #00ebaa;
+    top: 0;
+    left: 0;
+}
+
+.kagibox:after {
+    border-right: solid 2px #00ebaa;
+    border-bottom: solid 2px #00ebaa;
+    bottom: 0;
+    right: 0;
+}
+
+.kagibox p {
+    margin: 0;
+    padding: 0;
+}
+
 /* Basic */
 
 @-ms-viewport {

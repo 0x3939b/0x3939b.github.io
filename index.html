@@ -96,11 +96,11 @@
                 <div class="inner">
                     <a href="https://nullnote.0x3939b.cf" class="image"><img src="images/s2.png" alt="null Note" /></a>
                     <div class="content">
-                        <h2 class="major" style="font-size: 2em;"><span id="motto"></span>を、<span style="display: inline-block;">もっと。</span></h2>
+                        <h2 class="major" style="font-size: 2em;"><span id="motto"><span class="kagibox">&emsp;&emsp;</span>&nbsp;</span>を、<span style="display: inline-block;">もっと。</span></h2>
                         <p style="text-align: left;">私は探求心をもち、より良い “ものづくり” ができるよう心がけています</p>
                         <p style="text-align: left;">瞬く間に次々と進化していき、今まで使っていたものが通用しなくなってしまうこの世界で “今までにない” “新しい” ものや技術に触れて “何かを作る” のが好きです</p>
                         <p style="text-align: left;">日々経験を重ねていく中で、いつでもその経験にアクセスできるようNode.jsで開発された静的サイトジェネレータ <a href="https://hexo.io">Hexo</a> を用いてWebサイト <a href="https://nullnote.0x3939b.cf">null Note</a> を公開。</p>
-                        <a href="https://nullnote.0x3939b.cf" class="special">Go to null Note</a>
+                        <a href="https://nullnote.0x3939b.cf" id="motto_trigger" class="special">Go to null Note</a>
                     </div>
                 </div>
             </section>
@@ -308,9 +308,10 @@
         }
 
         // inview
-        $('#motto').on('inview', function(event, isInView) {
+        $('#motto_trigger').on('inview', function(event, isInView) {
             // ブラウザの表示域に表示されたときに実行
             if (isInView && unview) {
+                $("#motto").empty();
                 unview = false;
                 // iTyped
                 ityped.init('#motto', {
@@ -330,7 +331,7 @@
                     showCursor: false,
                     // アニメーション終了時
                     onFinished: function() {
-                        $('#motto').off('inview');
+                        $('#motto_trigger').off('inview');
                     }
                 });
 
